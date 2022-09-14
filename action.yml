@@ -1,0 +1,10 @@
+# action.yml
+name: "Blockless Function Publish"
+description: "Publish a Function to IPFS"
+runs:
+  using: "composite"
+  steps:
+    - name: Build and Publish
+      shell: bash
+      run: |-
+        bls function deploy
