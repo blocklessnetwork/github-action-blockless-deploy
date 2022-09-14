@@ -1,6 +1,9 @@
 # action.yml
 name: "Blockless Function Publish"
 description: "Publish a Function to IPFS"
+branding:
+  icon: "box"
+  color: "green"
 runs:
   using: "composite"
   steps:
