@@ -1,13 +1,22 @@
-# action.yml
-name: "Blockless Function Publish"
-description: "Publish a Function to IPFS"
+name: Blockless Function Publish
+description: Publish and Deploy Blockless functions to IPFS from Github Actions
+author: Blockless
+
 branding:
   icon: "box"
   color: "green"
+
+inputs:
+  root:
+    description: The path to the directory containing bls.toml
+    required: false
+
+outputs:
+  cid:
+    description: The CID of the published function
+  url:
+    description: The URL where the function is deployed to
+
 runs:
-  using: "composite"
-  steps:
-    - name: Build and Publish
-      shell: bash
-      run: |-
-        bls function deploy --yes
+  using: node16
+  main: dist/index.js
